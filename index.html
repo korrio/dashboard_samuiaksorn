@@ -78,12 +78,12 @@
             <small class="brt axz">History</small>
           </a>
                     </li>
-                    <li class="qp">
+<!--                     <li class="qp">
                         <a class="qn" href="embed.html" title="Cryptowat.ch" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="bv bgy"></span>
             <small class="brt axz">Cryptowat.ch</small>
           </a>
-                    </li>
+                    </li> -->
                     <!-- <li class="qp">
           <a class="qn active" href="../icon-nav/index.html" title="Icon-nav" data-toggle="tooltip" data-placement="right" data-container="body">
             <span class="bv bau"></span>
@@ -155,32 +155,32 @@
             </div>
             <div class="di bsl afx afz ayo awx">
                 <div class="dq em bsm agg">
+                    <h3 class="bqp axp year_revenue">
+                      0
+                      <small class="bqr bqs ">5%</small>
+                    </h3>
+                    <span class="bqq">Year Revenue</span>
+                </div>
+                <div class="dq em bsm agg">
                     <h3 class="bqp axp planned_revenue">
-          12,938
-          <small class="bqr bqs ">5%</small>
-        </h3>
+                      0
+                      <small class="bqr bqs ">5%</small>
+                    </h3>
                     <span class="bqq">Planned Revenue</span>
                 </div>
                 <div class="dq em bsm agg">
                     <h3 class="bqp axs job_count">
-          758
-          <small class="bqr bqt">1.3%</small>
-        </h3>
+                      0
+                      <small class="bqr bqt">1.3%</small>
+                    </h3>
                     <span class="bqq">OPEN JOBs</span>
                 </div>
                 <div class="dq em bsm agg">
                     <h3 class="bqp axp partner_count">
-          1,293
-          <small class="bqr bqs">6.75%</small>
-        </h3>
+                      0
+                      <small class="bqr bqs">6.75%</small>
+                    </h3>
                     <span class="bqq">Total Customers</span>
-                </div>
-                <div class="dq em bsm agg">
-                    <h3 class="bqp axs partner_new_count">
-          758
-          <small class="bqr bqt">1.3%</small>
-        </h3>
-                    <span class="bqq">New customers</span>
                 </div>
             </div>
             <div class="brc agj">
@@ -398,7 +398,7 @@
                             <strong class="axn">Traffic</strong>
                             <h3>MO</h3>
                         </div>
-                        <div class="ez agg air">
+                        <div class="ez agg air" style="display: none;">
                             <div class="azy aim">
                                 <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260,100,100]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e','#ffffff','#252525'] }" data-labels="['แป้น', 'สาว','ตา','โอ๋']">
                                 </canvas>
@@ -415,7 +415,7 @@
                             <strong class="axn">Traffic</strong>
                             <h3>งานเสร็จ</h3>
                         </div> 
-                        <div class="ez agg air">
+                        <div class="ez agg air" style="display: none;">
                             <div class="azy aim">
                                 <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260,100,100]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e','#ffffff','#252525'] }" data-labels="['แป้น', 'สาว','ตา','โอ๋']">
                                 </canvas>
@@ -436,7 +436,7 @@
                 </div>
             </div>
             <div class="brc afx agn">
-                <h3 class="brd bre">Coordinate Performance</h3>
+                <h3 class="brd bre">(OPEN JOBS)</h3>
             </div>
             <div class="di bsl">
                 <div class="ep ez agn amz">
@@ -489,7 +489,26 @@
                         <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[43,48,52,58,50,95,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
                     </div>
                 </div>
-                <div class="ep ez agn amz">
+                
+            </div>
+            <!-- <div class="brc agj">
+  <ul class="nav qq brd brf" role="tablist">
+    <li class="qp" role="presentation">
+      <a href="#sales" class="qn active" role="tab" data-toggle="tab" aria-controls="sales">Sales</a>
+    </li>
+    <li class="qp" role="presentation">
+      <a href="#inventory" class="qn" role="tab" data-toggle="tab" aria-controls="inventory">Inventory</a>
+    </li>
+    <li class="qp" role="presentation">
+      <a href="#profit" class="qn" role="tab" data-toggle="tab" aria-controls="profit">Profit</a>
+    </li>
+  </ul>
+</div> -->
+ <div class="brc afx agn" style="display: none;">
+                <h3 class="brd bre">(DONE JOBS)</h3>
+            </div>
+            <div class="di bsl" style="display: none;">
+<div class="ep ez agn amz">
                     <div class="bsm" id="container-5">
                         <div class="bve">
                             <span class="bqq">แป้น</span>
@@ -538,19 +557,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="brc agj">
-  <ul class="nav qq brd brf" role="tablist">
-    <li class="qp" role="presentation">
-      <a href="#sales" class="qn active" role="tab" data-toggle="tab" aria-controls="sales">Sales</a>
-    </li>
-    <li class="qp" role="presentation">
-      <a href="#inventory" class="qn" role="tab" data-toggle="tab" aria-controls="inventory">Inventory</a>
-    </li>
-    <li class="qp" role="presentation">
-      <a href="#profit" class="qn" role="tab" data-toggle="tab" aria-controls="profit">Profit</a>
-    </li>
-  </ul>
-</div> -->
+
             <div class="brc agl agg">
                 <h3 class="brd bre">RECENT TRANSACTION</h3>
             </div>
@@ -679,7 +686,6 @@
         // }
 
     });
-
     function callSummary() {
             var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_summary.php?";
             $.ajax({
@@ -689,7 +695,7 @@
                 dataCharset: 'jsonp',
                 success: function(data) {
                     $.each(data,function(k,v){
-                        $("." + k).html(v);
+                        $("." + k).html(addCommas(v));
                     });
                 }
             });
