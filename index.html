@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>
+        Samui Aksorn Dashboard
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    <link href="../assets/css/toolkit-inverse.css" rel="stylesheet">
+    <link href="../assets/css/application.css" rel="stylesheet">
+    <!--     <link href="../assets/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"> -->
+    <style>
+    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+    /* this chunk of css is not part of the toolkit :) */
+
+    body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+        padding-top: 20px !important;
+    }
+
+    @media only screen and (max-width: 768px) {
+        #chart-area {
+            display: block;
+            width: 100%;
+            height: 550px;
+        }
+        .nth {
+            display: none;
+        }
+    }
+
+    @media only screen and (min-width: 769px) {
+        #chart-area {
+            display: block;
+            width: 650px;
+            height: 650px;
+        }
+    }
+
+
+
+    #chart-container .embed {
+        height: 350px;
+    }
+    nav.ch {
+        z-index: 9999;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="brp">
+        <nav class="ch">
+            <a class="brq" href="../index.html">
+      <span class="bv bik brr"></span>
+    </a>
+            <div class="bru">
+                <ul class="nav qq brs aaj">
+                    <li class="qp">
+                        <a class="qn active" href="index.html" title="Overview" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv bhn"></span>
+            <small class="brt axz">Overview</small>
+          </a>
+                    </li>
+                    <li class="qp">
+                        <a class="qn " href="order-history.html" title="Order history" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv bnv"></span>
+            <small class="brt axz">History</small>
+          </a>
+                    </li>
+                    <li class="qp">
+                        <a class="qn" href="embed.html" title="Cryptowat.ch" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv bgy"></span>
+            <small class="brt axz">Cryptowat.ch</small>
+          </a>
+                    </li>
+                    <!-- <li class="qp">
+          <a class="qn active" href="../icon-nav/index.html" title="Icon-nav" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv bau"></span>
+            <small class="brt axz">Icon nav</small>
+          </a>
+        </li>
+        <li class="qp">
+          <a class="qn" href="../order-history.html" title="Docs" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv biv"></span>
+            <small class="brt axz">Docs</small>
+          </a>
+        </li>
+        <li class="qp">
+          <a class="qn" href="../index-light/index.html" title="Light UI" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv bgb"></span>
+            <small class="brt axz">Light UI</small>
+          </a>
+        </li>
+        <li class="qp">
+          <a class="qn" href="#" title="Signed in as mdo" data-toggle="tooltip" data-placement="right" data-container="body">
+            <img src="../assets/img/avatar-mdo.png" alt="" class="wc">
+            <small class="brt axz">@mdo</small>
+          </a>
+        </li> -->
+                </ul>
+            </div>
+        </nav>
+        <nav class="ci rd aem ri vr app-navbar" style="display: none">
+            <button class="qx ra axz" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="qy"></span>
+            </button>
+            <img width="90" src="" />
+            <a class="qv" href="#">
+                <!-- <span class="bv bik ayz"></span> -->
+                <!-- Dashboard -->
+            </a>
+            <div class="collapse rc aij" id="navbarResponsive">
+                <ul class="nav navbar-nav">
+                    <li class="qp active">
+                        <a class="qn" href="index.html">Overview for 2017</a>
+                    </li>
+                    <li class="qp">
+                        <a class="qn" href="order-history.html">Order History</a>
+                    </li>
+                    <!--                 <li class="qp">
+                    <a class="qn" href="../icon-nav/index.html">Icon nav</a>
+                </li>
+                <li class="qp">
+                    <a class="qn" href="../docs/index.html">Docs</a> -->
+                    </li>
+                </ul>
+                <form class="ox axy ail">
+                    <input class="form-control" type="text" data-action="grow" placeholder="Search">
+                </form>
+            </div>
+        </nav>
+        <div class="dh azs">
+            <div class="brv age">
+                <div class="brw">
+                    <h6 class="bry nth">Dashboards</h6>
+                    <h2 class="brx">Overview</h2>
+                </div>
+                <div class="qb brz">
+                    <div class="ayt brg">
+                        <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
+                        <span class="bv bck"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="di bsl afx afz ayo awx">
+                <div class="dq em bsm agg">
+                    <h3 class="bqp axp planned_revenue">
+          12,938
+          <small class="bqr bqs ">5%</small>
+        </h3>
+                    <span class="bqq">Planned Revenue</span>
+                </div>
+                <div class="dq em bsm agg">
+                    <h3 class="bqp axs job_count">
+          758
+          <small class="bqr bqt">1.3%</small>
+        </h3>
+                    <span class="bqq">OPEN JOBs</span>
+                </div>
+                <div class="dq em bsm agg">
+                    <h3 class="bqp axp partner_count">
+          1,293
+          <small class="bqr bqs">6.75%</small>
+        </h3>
+                    <span class="bqq">Total Customers</span>
+                </div>
+                <div class="dq em bsm agg">
+                    <h3 class="bqp axs partner_new_count">
+          758
+          <small class="bqr bqt">1.3%</small>
+        </h3>
+                    <span class="bqq">New customers</span>
+                </div>
+            </div>
+            <div class="brc agj">
+                <div class="qq brd brf">
+                    <canvas id="chart-area" style="">
+                    </canvas>
+                </div>
+            </div>
+            <div class="brc agj">
+                <ul class="nav qq brd brf" role="tablist">
+                    <li class="qp" role="presentation">
+                        <a href="#sales" class="qn active" role="tab" data-toggle="tab" aria-controls="sales">Donut</a>
+                    </li>
+                    <li class="qp" role="presentation">
+                        <a href="#inventory" class="qn" role="tab" data-toggle="tab" aria-controls="inventory">Bar</a>
+                    </li>
+                    <li class="qp" role="presentation">
+                        <a href="#profit" class="qn" role="tab" data-toggle="tab" aria-controls="profit">Graph</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="qt">
+                <div role="tabpanel" class="qu" id="profit">
+                    <div class="bvf">
+                        <canvas class="brb" width="600" height="350" data-chart="line" data-dataset="[[2500, 3300, 2512, 2775, 2498, 3512, 2925, 4275, 3507, 3825, 3445, 3985]]" data-labels="['Jan 31','','','April 31','','','July 31','','','Oct 31','','']" data-dark="true">
+                        </canvas>
+                    </div>
+                </div>
+                <div role="tabpanel" class="qu" id="inventory">
+                    <div class="bvf">
+                        <canvas class="brb" width="600" height="400" data-chart="bar" data-dark="true" data-labels="['August','September','October','November','December','January','February']" data-dataset="[[65, 59, 80, 81, 56, 55, 40], [28, 48, 40, 19, 86, 27, 90]]" data-dataset-options="[{label: 'First dataset'}, {label: 'Second dataset'}]">
+                        </canvas>
+                    </div>
+                </div>
+                <style type="text/css">
+                .donut-inner {
+                    margin-top: -140px; //margin-bottom: 100px;
+                }
+
+                .donut-inner h3 {
+                    margin-bottom: 5px;
+                    margin-top: 0;
+                }
+
+                .donut-inner span {
+                    font-size: 12px;
+                }
+                </style>
+                <div role="tabpanel" class="qu active" id="sales">
+                    <div class="di bvg awt">
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas id="zxc-donut" class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[230, 130]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Returning', 'New']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_1">304,203.23</h3>
+                                <h4>THB</h4>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <h2>ตัด 5</h2>
+                            </div>
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas id="btc-donut" class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[330,30]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Merchant', 'Paid']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_2">5555</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <h2>MO4</h2>
+                                <!-- <strong class="axn btc-rate">140,000 THB/BTC</strong> -->
+                            </div>
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas id="btc-donut" class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Merchant', 'Paid']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_3">4,534.03</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <h2>GTO4</h2>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <!-- <span><strong class="axn">Traffic</strong></span> -->
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Merchant', 'Paid']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_4">2,434,534.07</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <h3>Digital Print</h3>
+                           <!--  <strong class="axn">Traffic</strong> -->
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Referrals', 'Direct']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_5">2,434,534.07</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <strong class="axn">Traffic</strong>
+                            <h3>ตัด 11</h3>
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Referrals', 'Direct']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_6">2,434,534.07</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <strong class="axn">Traffic</strong>
+                            <h3>อิงค์เจ็ท</h3>
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Referrals', 'Direct']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_7">2,434,534.07</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <strong class="axn">Traffic</strong>
+                            <h3>GTO</h3>
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Referrals', 'Direct']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_8">2,434,534.07</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <strong class="axn">Traffic</strong>
+                            <h3>Sticker</h3>
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Referrals', 'Direct']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_9">2,434,534.07</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <strong class="axn">Traffic</strong>
+                            <h3>บริการอื่นๆ</h3>
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e'] }" data-labels="['Referrals', 'Direct']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_10">2,434,534.07</h3>
+                                <h4>THB</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <strong class="axn">Traffic</strong>
+                            <h3>MO</h3>
+                        </div>
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260,100,100]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e','#ffffff','#252525'] }" data-labels="['แป้น', 'สาว','ตา','โอ๋']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_11">2,434,534.07</h3>
+                                <h4>JOBS</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <strong class="axn">Traffic</strong>
+                            <h3>งานเสร็จ</h3>
+                        </div> 
+                        <div class="ez agg air">
+                            <div class="azy aim">
+                                <canvas class="bra" width="200" height="200" data-chart="doughnut" data-dataset="[100,260,100,100]" data-dataset-options="{ borderColor: '#252830', backgroundColor: ['#1ca8dd', '#1bc98e','#ffffff','#252525'] }" data-labels="['แป้น', 'สาว','ตา','โอ๋']">
+                                </canvas>
+                            </div>
+                            <div class="donut-inner">
+                                <h3 class="total_12 job_count">2,434,534.07</h3>
+                                <h4>JOBS</h4>
+                                <!-- <span><strong class="axn">THB</strong></span> -->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <strong class="axn btc-rate"></strong>
+                            </div>
+                            <strong class="axn">Traffic</strong>
+                            <h3>งานค้าง</h3>
+                        </div>                           
+                    </div>
+                </div>
+            </div>
+            <div class="brc afx agn">
+                <h3 class="brd bre">Coordinate Performance</h3>
+            </div>
+            <div class="di bsl">
+                <div class="ep ez agn amz">
+                       
+                                                                    
+                    <div class="bsm" id="container-1">
+                        <div class="bve">
+                            <span class="bqq">แป้น</span>
+                            <h2 class="bqp" id="THBUSD">
+          12,938
+          <small class="cj sy">5%</small>
+        </h2>
+                        </div>
+                        <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[28,68,41,43,96,45,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+                    </div>
+                </div>
+                <div class="ep ez agn amz">
+                    <div class="bsm" id="container-2">
+                        <div class="bve">
+                            <span class="bqq">สาว</span>
+                            <h2 class="bqp" id="THBCNY">
+          758
+          <small class="cj tb">1.3%</small>
+        </h2>
+                        </div>
+                        <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[4,34,64,27,96,50,80]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+                    </div>
+                </div>
+                <div class="ep ez agn amz">
+                    <div class="bsm" id="container-3">
+                        <div class="bve">
+                            <span class="bqq">ตา</span>
+                            <h2 class="bqp" id="THBJPY">
+          1,293
+          <small class="cj sy">6.75%</small>
+        </h2>
+                        </div>
+                        <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[12,38,32,60,36,54,68]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+                    </div>
+                </div>
+                <div class="ep ez agn amz">
+                    <div class="bsm" id="container-4">
+                        <div class="bve">
+                            <span class="bqq">โอ๋</span>
+                            <h2 class="bqp" id="THBSGD">
+          758
+          <small class="cj sy">1.3%</small>
+        </h2>
+                        </div>
+                        <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[43,48,52,58,50,95,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+                    </div>
+                </div>
+                <div class="ep ez agn amz">
+                    <div class="bsm" id="container-5">
+                        <div class="bve">
+                            <span class="bqq">แป้น</span>
+                            <h2 class="bqp" id="THBEUR">
+          758
+          <small class="cj sy">1.3%</small>
+        </h2>
+                        </div>
+                        <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[43,48,52,58,50,95,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+                    </div>
+                </div>
+                <div class="ep ez agn amz">
+                    <div class="bsm" id="container-6">
+                        <div class="bve">
+                            <span class="bqq">สาว</span>
+                            <h2 class="bqp" id="THBAUD">
+          758
+          <small class="cj sy">1.3%</small>
+        </h2>
+                        </div>
+                        <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[43,48,52,58,50,95,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+                    </div>
+                </div>
+                <div class="ep ez agn amz">
+                    <div class="bsm" id="container-7">
+                        <div class="bve">
+                            <span class="bqq">ตา</span>
+                            <h2 class="bqp" id="THBHKD">
+          758
+          <small class="cj sy">1.3%</small>
+        </h2>
+                        </div>
+                        <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[43,48,52,58,50,95,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+                    </div>
+                </div>
+                <div class="ep ez agn amz">
+                    <div class="bsm" id="container-8">
+                        <div class="bve">
+                            <span class="bqq">โอ๋</span>
+                            <h2 class="bqp" id="THBGBP">
+          758
+          <small class="cj sy">1.3%</small>
+        </h2>
+                        </div>
+                        <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[43,48,52,58,50,95,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="brc agj">
+  <ul class="nav qq brd brf" role="tablist">
+    <li class="qp" role="presentation">
+      <a href="#sales" class="qn active" role="tab" data-toggle="tab" aria-controls="sales">Sales</a>
+    </li>
+    <li class="qp" role="presentation">
+      <a href="#inventory" class="qn" role="tab" data-toggle="tab" aria-controls="inventory">Inventory</a>
+    </li>
+    <li class="qp" role="presentation">
+      <a href="#profit" class="qn" role="tab" data-toggle="tab" aria-controls="profit">Profit</a>
+    </li>
+  </ul>
+</div> -->
+            <div class="brc agl agg">
+                <h3 class="brd bre">RECENT TRANSACTION</h3>
+            </div>
+            <div class="di">
+                <div class="fa agn">
+                    <div class="by afz segment_customer">
+<h6 class="azi ">
+        Revenue Customer <span class="axn planned" style="display:none;float: right">62.4%</span>
+      </h6>
+<!--                         <a class="rp tr yg" href="#">
+          <span class="azj" style="width: 62.4%;"></span>
+          <span>China</span>
+          <span class="axn">62.4%</span>
+        </a>
+                        <a class="rp tr yg" href="#">
+          <span class="azj" style="width: 15.0%;"></span>
+          <span>United States</span>
+          <span class="axn">15.0%</span>
+        </a> -->
+                       
+                    </div>
+                    <a href="#" class="ce pi ahr">View all customer</a>
+                </div>
+                <div class="fa agn">
+                    <div class="by afz recent_customer">
+                        <h6 class="azi">
+        Recent Customer
+      </h6>
+                        
+                        
+                    </div>
+                    <a href="#" class="ce pi ahr">View all recent customer</a>
+                </div>
+                <div class="fa agn">
+                    <div class="by afz machine_performance" >
+                        <h6 class="azi">
+        Royalty Customer <span class="axn performance" style="display:none; float: right">62.4%</span>
+      </h6>
+<!--                         <a class="rp tr yg" href="#">
+          <span>BKK#1 (1920x1080)</span>
+          <span class="axn">3,929,481</span>
+        </a> -->
+                       
+                    </div>
+                    <a href="#" class="ce pi ahr">View all royalty customer</a>
+                </div>
+            </div>
+            <div class="brc agl agg cryptowatch">
+                <h3 class="brd bre">CRYPTOWAT.CH</h3>
+            </div>
+            <div class="di cryptowatch" id="chart-container">
+                <div class="fa agn">
+                    <div class="embed omgusd"></div>
+                </div>
+                <div class="fa agn">
+                    <div class="embed omgbtc"></div>
+                </div>
+                <div class="fa agn">
+                    <div class="embed btcusd"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/tether.min.js"></script>
+    <script src="../assets/js/tablesorter.min.js"></script>
+    <script src="../assets/js/toolkit.js"></script>
+    <script src="../assets/js/application.js"></script>
+    <script src="../assets/js/chart.js"></script>
+    <!-- <script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>
+     --><script>
+    // execute/clear BS loaders for docs
+    $(function() {
+        while (window.BS && window.BS.loader && window.BS.loader.length) {
+            (window.BS.loader.pop())()
+        }
+    })
+    </script>
+    <script type="text/javascript">
+    var currency = ["USD", "CNY", "JPY", "SGD", "EUR", "AUD", "HKD", "GBP"];
+    var cryptocurrency = ["omgusd", "omgbtc", "btcusd"];
+
+    window.chartColors = {
+        red: 'rgb(255, 99, 132)',
+        orange: 'rgb(255, 159, 64)',
+        yellow: 'rgb(255, 205, 86)',
+        green: 'rgb(75, 192, 192)',
+        blue: 'rgb(54, 162, 235)',
+        purple: 'rgb(153, 102, 255)',
+        grey: 'rgb(201, 203, 207)'
+    };
+
+    $(function() {
+
+        $("[role='tablist'] .qn").on("click",function(e){
+            e.preventDefault();
+            $("[role='tablist'] .qn").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        callSummary();
+
+        callMachinePerformance();
+
+        callRevenue();
+
+        callCoorPerformance();
+
+        // $.each(currency, function(k, v) {
+        //     callExchange(v);
+        // });
+
+        
+
+        callSegmentPartner();
+        callRecentPartner();
+        callRoyaltyPartner();
+
+
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        //     $(".cryptowatch").hide();
+        // } else {
+        //     $.each(cryptocurrency, function(k, v) {
+        //         callCryptowatch(v);
+        //     });
+        // }
+
+    });
+
+    function callSummary() {
+            var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_summary.php?";
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'jsonp',
+                dataCharset: 'jsonp',
+                success: function(data) {
+                    $.each(data,function(k,v){
+                        $("." + k).html(v);
+                    });
+                }
+            });
+        }
+
+    function callCoorPerformance() {
+            var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_coor_performance.php";
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'jsonp',
+                dataCharset: 'jsonp',
+                success: function(data) {
+                    console.log(data);
+                    var i = 1;
+                    $.each(data['open'],function(k,v){
+                        $("#container-" + i + " h2").html(v.total_job);
+                        i++;
+                    });
+
+                    $.each(data['done'],function(k,v){
+                        $("#container-" + i + " h2").html(v.total_job);
+                        i++;
+                    });
+                }
+            });
+    }
+
+    function callRecentPartner() {
+            var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_recent_partner.php?";
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'jsonp',
+                dataCharset: 'jsonp',
+                success: function(data) {
+                    $.each(data['items'].reverse(), function(k, v) {
+                        var cat = (v.category_name != null ? v.category_name : "N/A");
+                        var str = "";
+                        str += '<a class="rp tr yg" target="_blank" href="http://erpsamuiaksorn.com/stat/2013/check/new.php?customer='+v.id+'">\
+          <span>'+v.name+'</span>\
+          <span class="axn">'+cat+'</span>\
+        </a>';
+                        $(".recent_customer").append(str);
+                    })
+                }
+            });
+        }
+
+        function callRoyaltyPartner() {
+            var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_royalty_partner.php?";
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'jsonp',
+                dataCharset: 'jsonp',
+                success: function(data) {
+                    var top_revenue = 0;
+                    var planned_revenue = 0;
+                    $.each(data['items'], function(k, v) {
+                        if(k == 0)
+                            top_revenue = v.planned_revenue;
+                        var percent = v.probability;
+                        planned_revenue += parseInt(v.planned_revenue)
+                        var cat = (v.cat_name != null ? v.cat_name : "N/A");
+                        var str = "";
+                        str += '<a class="rp tr yg" target="_blank" href="http://erpsamuiaksorn.com/stat/2013/check/new.php?customer='+v.categ_id+'">\
+          <span>'+v.name+'</span>\
+          <span class="axn"></span>\
+          <span class="axn">'+addCommas(v.sum_rev)+'</span>\
+        </a>';
+                        $(".machine_performance").append(str);
+                    });
+                    //$(".planned").html(planned_revenue);
+
+                }
+            });
+        }
+
+    function callSegmentPartner() {
+            var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_segment_partner.php?";
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'jsonp',
+                dataCharset: 'jsonp',
+                success: function(data) {
+                    var top_revenue = 0;
+                    var planned_revenue = 0;
+                    $.each(data['items'], function(k, v) {
+                        if(k == 0)
+                            top_revenue = v.planned_revenue;
+                        var percent = v.probability;
+                        planned_revenue += parseInt(v.planned_revenue)
+                        var cat = (v.cat_name != null ? v.cat_name : "N/A");
+                        var str = "";
+                        str += '<a class="rp tr yg" target="_blank" href="http://erpsamuiaksorn.com/stat/2013/check/new.php?customer='+v.id+'">\
+                        <span class="azj" style="width: '+percent+'%;"></span>\
+          <span>'+v.c_name+'</span>\
+          <span class="axn"></span>\
+          <span class="axn">'+addCommas(v.planned_revenue)+'</span>\
+        </a>';
+                        $(".segment_customer").append(str);
+                    });
+                    $(".planned").html(planned_revenue);
+
+                }
+            });
+        }
+
+    function callMachinePerformance() {
+            var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_machine_performance.php?";
+            $.ajax({
+                url: url,
+                type: 'GET',
+                dataType: 'jsonp',
+                dataCharset: 'jsonp',
+                success: function(data) {
+                    var top_revenue = 0;
+                    var total_revenue = data['total_revenue'];
+                    $(".performance").html(total_revenue);
+
+                    var arr = [];
+                    var labels = [];
+
+                    var i = 0;
+
+                    $.each(data['items'], function(k, v) {
+                        i++;
+                        if(k == 0)
+                            top_revenue = v.planned_revenue;
+
+                        var cat = (v.category_name != null ? v.category_name : "N/A");
+                        var sum_rev = (v.sum_rev != null ? v.sum_rev : 0);
+
+                        $(".total_"+i).html(addCommas(sum_rev));
+
+                        arr.push(sum_rev);
+                        labels.push(cat);
+                        var percent = (sum_rev/total_revenue) * 100;
+                        var str = "";
+                        str += '<a class="rp tr yg" href="#">\
+                        <span class="azj" style="width: '+percent+'%;"></span>\
+          <span>'+cat+'</span>\
+          <span class="axn">'+sum_rev+'</span>\
+        </a>\
+        </a>';
+                        //$(".machine_performance").append(str);
+                    });
+
+                    var config = {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    data: arr,
+                    backgroundColor: [
+                        window.chartColors.red,
+                        window.chartColors.orange,
+                        window.chartColors.yellow,
+                        window.chartColors.green,
+                        window.chartColors.blue,
+                        window.chartColors.purple,
+                        window.chartColors.grey,
+                        window.chartColors.yellow,
+                        window.chartColors.green,
+                        window.chartColors.blue,
+                    ],
+                    label: 'Dataset 1'
+                }],
+                labels: labels
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    display: false,
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Revenue Chart'
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        };
+
+        var ctx = document.getElementById("chart-area").getContext("2d");
+            window.myDoughnut = new Chart(ctx, config);
+
+
+                }
+            });
+        }
+
+    function callCryptowatch(currency) {
+        var chart = new cryptowatch.Embed('bitfinex', currency, {
+            timePeriod: '4H',
+            width: '100%',
+            customColorScheme: {
+                bg: "252830",
+                text: "b2b2b2",
+                textStrong: "e5e5e5",
+                textWeak: "7f7f7f",
+                short: "FD4600",
+                shortFill: "FF672C",
+                long: "6290FF",
+                longFill: "002782",
+                cta: "363D52",
+                ctaHighlight: "414A67",
+                alert: "FFD506",
+            }
+        });
+        chart.mount('#chart-container .' + currency);
+    }
+
+    function callExchange(currency) {
+
+        $.ajax({
+            type: "GET",
+            url: "https://iapi.bot.or.th/Stat/Stat-ExchangeRate/DAILY_AVG_EXG_RATE_V1/?start_period=2017-08-03&end_period=2017-08-12&currency=" + currency,
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader(
+                    'api-key', 'U9G1L457H6DCugT7VmBaEacbHV9RX0PySO05cYaGsm'
+                );
+            },
+            success: function(result) {
+                console.log(result.result.data);
+                $("#THB" + currency).html(result.result.data.data_detail[0].selling);
+
+                var a = [];
+
+                $.each(result.result.data.data_detail, function(k, v) {
+                    a.push(v.buying_transfer);
+                });
+
+
+                var options = $.extend({
+                    animation: { duration: 100 },
+                    legend: { display: !1 },
+                    scales: {
+                        xAxes: [{ display: !1 }],
+                        yAxes: [{ display: !1 }]
+                    },
+                    tooltips: { enabled: 1 }
+                }, options);
+
+                var ctx = $("#THB" + currency + "-container #sparkline1");
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                        datasets: [{
+                            // label: '# of Votes',
+                            data: a,
+                            backgroundColor: [
+                                'rgba(28,168,221,0.03)',
+                                // 'rgba(54, 162, 235, 0.2)',
+                                // 'rgba(255, 206, 86, 0.2)',
+                                // 'rgba(75, 192, 192, 0.2)',
+                                // 'rgba(153, 102, 255, 0.2)',
+                                // 'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                '#1ca8dd',
+                                // 'rgba(54, 162, 235, 1)',
+                                // 'rgba(255, 206, 86, 1)',
+                                // 'rgba(75, 192, 192, 1)',
+                                // 'rgba(153, 102, 255, 1)',
+                                // 'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 3
+                        }]
+                    },
+                    options: options
+                });
+
+            },
+            error: function(result) {
+                //handle the error
+            }
+        });
+
+    }
+
+    var chartAltColor = {
+                bg: "#252830",
+                text: "#b2b2b2",
+                textStrong: "#e5e5e5",
+                textWeak: "#7f7f7f",
+                short: "#FD4600",
+                shortFill: "#FF672C",
+                long: "#6290FF",
+                longFill: "#002782",
+                cta: "#363D52",
+                ctaHighlight: "#414A67",
+                alert: "#FFD506",
+            };
+        
+
+    function callRevenue() {
+
+
+
+        var randomScalingFactor = function() {
+            return Math.round(Math.random() * 100);
+        };
+
+
+
+        window.onload = function() {
+            
+        };
+
+    }
+
+    function addCommas(nStr)
+    {
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+        return x1 + x2;
+    }
+
+    Chart.pluginService.register({
+        beforeDraw: function(chart) {
+            if (chart.config.options.elements.center) {
+                //Get ctx from string
+                var ctx = chart.chart.ctx;
+
+                //Get options from the center object in options
+                var centerConfig = chart.config.options.elements.center;
+                var fontStyle = centerConfig.fontStyle || 'Arial';
+                var txt = centerConfig.text;
+                var color = centerConfig.color || '#000';
+                var sidePadding = centerConfig.sidePadding || 20;
+                var sidePaddingCalculated = (sidePadding / 100) * (chart.innerRadius * 2)
+                //Start with a base font of 30px
+                ctx.font = "30px " + fontStyle;
+
+                //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+                var stringWidth = ctx.measureText(txt).width;
+                var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+                // Find out how much the font can grow in width.
+                var widthRatio = elementWidth / stringWidth;
+                var newFontSize = Math.floor(30 * widthRatio);
+                var elementHeight = (chart.innerRadius * 2);
+
+                // Pick a new font size so it will not be larger than the height of label.
+                var fontSizeToUse = Math.min(newFontSize, elementHeight);
+
+                //Set font settings to draw it correctly.
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+                var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+                ctx.font = fontSizeToUse + "px " + fontStyle;
+                ctx.fillStyle = color;
+
+                //Draw text in center
+                ctx.fillText(txt, centerX, centerY);
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>
+        Digicoin Dashboard
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    <link href="../assets/css/toolkit-inverse.css" rel="stylesheet">
+    <link href="../assets/css/application.css" rel="stylesheet">
+    <style>
+    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+    /* this chunk of css is not part of the toolkit :) */
+
+    body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+    }
+
+    #chart-container {
+        width: 100%;
+        height: 100vh;
+    }
+    </style>
+    
+</head>
+
+<body>
+    <div class="brp">
+        <nav class="ch">
+            <a class="brq" href="index.html">
+      <span class="bv bik brr"></span>
+    </a>
+            <div class="bru">
+                <ul class="nav qq brs aaj">
+                    <li class="qp">
+                        <a class="qn" href="index.html" title="Overview" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv bhn"></span>
+            <small class="brt axz">Overview</small>
+          </a>
+                    </li>
+                    <li class="qp">
+                        <a class="qn " href="order-history.html" title="Order history" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv bnv"></span>
+            <small class="brt axz">History</small>
+          </a>
+                    </li>
+                    <li class="qp ">
+                        <a class="qn active" href="embed.html" title="Cryptowat.ch" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="bv bgy"></span>
+            <small class="brt axz">Cryptowat.ch</small>
+          </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="bw">
+            <div id="chart-container"></div>
+        </div>
+    </div>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/tether.min.js"></script>
+    <script src="../assets/js/chart.js"></script>
+    <script src="../assets/js/tablesorter.min.js"></script>
+    <script src="../assets/js/toolkit.js"></script>
+    <script src="../assets/js/application.js"></script>
+    <script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var chart = new cryptowatch.Embed('bitfinex', 'btcusd', {
+            timePeriod: '1d',
+            width: '100%',
+            customColorScheme: {
+                bg: "252830",
+                text: "b2b2b2",
+                textStrong: "e5e5e5",
+                textWeak: "7f7f7f",
+                short: "FD4600",
+                shortFill: "FF672C",
+                long: "6290FF",
+                longFill: "002782",
+                cta: "363D52",
+                ctaHighlight: "414A67",
+                alert: "FFD506",
+            }
+        });
+        chart.mount('#chart-container');
+    });
+    </script>
+
+    <script>
+    // execute/clear BS loaders for docs
+    $(function() { while (window.BS && window.BS.loader && window.BS.loader.length) {
+            (window.BS.loader.pop())() } })
+    </script>
+</body>
+
+</html>
