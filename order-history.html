@@ -83,7 +83,7 @@
             <div class="brv">
                 <div class="brw">
                     <h6 class="bry nth">Dashboards</h6>
-                    <h3 class="brx">Order history</h3>
+                    <h3 class="brx">Recent order</h3>
                 </div>
                 <div class="brz" style="display: none">
                     <div class="brg bsb">
@@ -250,7 +250,7 @@
                 data: {
                     job_no: "",
                     job_name: "",
-                    state: "done",
+                    state: "open",
                     stage: "",
                     holder: "",
                     partner: ""
@@ -262,6 +262,7 @@
                     $.each(data['items'].reverse(), function(k, v) {
                         //console.log(v);
                         var str = "";
+                        var date_open = (v["date_open"]).substr(0,10);
                         str += '<tr>\
                                     <td>\
                                         <input type="checkbox" class="bva">\
@@ -269,7 +270,7 @@
                                     <td><a target="_blank" href="http://erpsamuiaksorn.com/uploader/?job_no='+v["job_no"]+'">#'+v["job_no"]+'</a></td>\
                                     <td><a target="_blank" href="http://erpsamuiaksorn.com/stat/2013/check/new.php?customer='+v["partner_id"]+'">'+v["p_name"]+'</a></td>\
                                     <td>'+v["fax"]+'</td>\
-                                    <td>'+v["date_closed"]+'</td>\
+                                    <td>'+date_open+'</td>\
                                     <td>'+v["planned_revenue"]+'</td>\
                                 </tr>';
                         $(".ck tbody").prepend(str);

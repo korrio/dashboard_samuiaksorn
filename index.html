@@ -169,10 +169,11 @@
                     <span class="bqq">Planned Revenue</span>
                 </div>
                 <div class="dq em bsm agg">
-                    <h3 class="bqp axs job_count">
+                    <a href="order-history.html"><h3 class="bqp axs job_count">
                       0
                       <small class="bqr bqt">1.3%</small>
                     </h3>
+                    </a>
                     <span class="bqq">OPEN JOBs</span>
                 </div>
                 <div class="dq em bsm agg">
@@ -446,8 +447,8 @@
                         <div class="bve">
                             <span class="bqq">แป้น</span>
                             <h2 class="bqp" id="THBUSD">
-          12,938
-          <small class="cj sy">5%</small>
+          0
+          <!-- <small class="cj sy">5%</small> -->
         </h2>
                         </div>
                         <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[28,68,41,43,96,45,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a', 'b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
@@ -458,8 +459,8 @@
                         <div class="bve">
                             <span class="bqq">สาว</span>
                             <h2 class="bqp" id="THBCNY">
-          758
-          <small class="cj tb">1.3%</small>
+          0
+          <!-- <small class="cj tb">1.3%</small> -->
         </h2>
                         </div>
                         <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[4,34,64,27,96,50,80]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
@@ -470,8 +471,8 @@
                         <div class="bve">
                             <span class="bqq">ตา</span>
                             <h2 class="bqp" id="THBJPY">
-          1,293
-          <small class="cj sy">6.75%</small>
+          0
+          <!-- <small class="cj sy">6.75%</small> -->
         </h2>
                         </div>
                         <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[12,38,32,60,36,54,68]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
@@ -482,8 +483,8 @@
                         <div class="bve">
                             <span class="bqq">โอ๋</span>
                             <h2 class="bqp" id="THBSGD">
-          758
-          <small class="cj sy">1.3%</small>
+          0
+          <!-- <small class="cj sy">1.3%</small> -->
         </h2>
                         </div>
                         <canvas id="sparkline1" width="378" height="94" class="bsn" data-chart="spark-line" data-dataset="[[43,48,52,58,50,95,100]]" data-dataset-options="[{borderColor: '#1ca8dd', backgroundColor:'rgba(28,168,221,.03)'}]" data-labels="['a','b','c','d','e','f','g']" style="width: 189px; height: 47px;"></canvas>
@@ -605,10 +606,10 @@
                     <a href="#" class="ce pi ahr">View all royalty customer</a>
                 </div>
             </div>
-            <div class="brc agl agg cryptowatch">
+            <div class="brc agl agg cryptowatch" style="display: none">
                 <h3 class="brd bre">CRYPTOWAT.CH</h3>
             </div>
-            <div class="di cryptowatch" id="chart-container">
+            <div class="di cryptowatch" id="chart-container" style="display: none">
                 <div class="fa agn">
                     <div class="embed omgusd"></div>
                 </div>
@@ -650,6 +651,11 @@
         grey: 'rgb(201, 203, 207)'
     };
 
+    var year = getParameterByName('year');
+
+    if(!year)
+        year = 2017;
+
     $(function() {
 
         $("[role='tablist'] .qn").on("click",function(e){
@@ -670,8 +676,6 @@
         //     callExchange(v);
         // });
 
-        
-
         callSegmentPartner();
         callRecentPartner();
         callRoyaltyPartner();
@@ -686,11 +690,25 @@
         // }
 
     });
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
     function callSummary() {
             var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_summary.php?";
             $.ajax({
                 url: url,
                 type: 'GET',
+                data:{
+                    year: year
+                },
                 dataType: 'jsonp',
                 dataCharset: 'jsonp',
                 success: function(data) {
@@ -706,6 +724,9 @@
             $.ajax({
                 url: url,
                 type: 'GET',
+                data:{
+                    year: year
+                },               
                 dataType: 'jsonp',
                 dataCharset: 'jsonp',
                 success: function(data) {
@@ -713,13 +734,13 @@
                     var i = 1;
                     $.each(data['open'],function(k,v){
                         $("#container-" + i + " h2").html(v.total_job);
+                        $("#container-" + i + " bqq").html(v.city);
                         i++;
                     });
-
-                    $.each(data['done'],function(k,v){
-                        $("#container-" + i + " h2").html(v.total_job);
-                        i++;
-                    });
+                    // $.each(data['done'],function(k,v){
+                    //     $("#container-" + i + " h2").html(v.total_job);
+                    //     i++;
+                    // });
                 }
             });
     }
@@ -745,11 +766,14 @@
             });
         }
 
-        function callRoyaltyPartner() {
+    function callRoyaltyPartner() {
             var url = "http://erpsamuiaksorn.com/stat/2013/check/_analytic_royalty_partner.php?";
             $.ajax({
                 url: url,
                 type: 'GET',
+                data:{
+                    year: year
+                },  
                 dataType: 'jsonp',
                 dataCharset: 'jsonp',
                 success: function(data) {
@@ -780,6 +804,9 @@
             $.ajax({
                 url: url,
                 type: 'GET',
+                data:{
+                    year: year
+                },  
                 dataType: 'jsonp',
                 dataCharset: 'jsonp',
                 success: function(data) {
@@ -811,6 +838,9 @@
             $.ajax({
                 url: url,
                 type: 'GET',
+                data:{
+                    year: year
+                },  
                 dataType: 'jsonp',
                 dataCharset: 'jsonp',
                 success: function(data) {
